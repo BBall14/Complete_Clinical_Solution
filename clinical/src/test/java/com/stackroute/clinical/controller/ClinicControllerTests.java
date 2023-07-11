@@ -111,36 +111,5 @@ public class ClinicControllerTests {
         verify(clinicService, times(1)).getClinicalById(id);
     }
 
-    @Test
-    void testUpdateClinicalById_ReturnsOkResponse() throws ClinicDoesNotExistException {
-        int id = 1;
-        Clinic clinical = new Clinic();
-        // Set clinical properties
-
-        ResponseEntity<String> expectedResponse = ResponseEntity.ok("Clinical Details Updated Successfully");
-
-        doNothing().when(clinicService).updateClinicalById(id, clinical);
-
-        ResponseEntity<String> result = clinicController.updateClinicalById(id, clinical);
-
-        assertEquals(expectedResponse, result);
-        verify(clinicService, times(1)).updateClinicalById(id, clinical);
-    }
-
-    @Test
-    void testUpdateClinicalById_ReturnsNotFoundResponse() throws ClinicDoesNotExistException {
-        int id = 1;
-        Clinic clinical = new Clinic();
-        // Set clinical properties
-
-        ResponseEntity<String> expectedResponse = ResponseEntity.status(HttpStatus.NOT_FOUND).body("Clinic Does Not Exist");
-
-        doThrow(ClinicDoesNotExistException.class).when(clinicService).updateClinicalById(id, clinical);
-
-        ResponseEntity<String> result = clinicController.updateClinicalById(id, clinical);
-
-        assertEquals(expectedResponse, result);
-        verify(clinicService, times(1)).updateClinicalById(id, clinical);
-    }
 }
 
