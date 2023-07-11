@@ -1,0 +1,24 @@
+{
+  "stock": [
+    {
+      "symbol": "3MINDIA",
+      "name": "3M India Limited",
+      "currency": "INR",
+      "exchange": "BSE",
+      "mic_code": "XBOM",
+      "country": "India",
+      "type": "Common Stock",
+      "id": 1
+    },
+    {
+      "symbol": "3DA",
+      "name": "Amaero International Ltd",
+      "currency": "AUD",
+      "exchange": "ASX",
+      "mic_code": "XASX",
+      "country": "Australia",
+      "type": "Common Stock",
+      "id": 2
+    }
+  ]
+}

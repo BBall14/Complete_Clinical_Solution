@@ -1,0 +1,68 @@
+<!-- Toolbar component is used to display the header of the page -->
+<app-toolbar></app-toolbar>
+
+<!--div with a mat card-->
+<div class="mat-card">
+    <mat-card>
+        <!--mat card header and Login here!-->
+        <mat-card-header>
+            <mat-card-title>
+                <h2>Update Trail Detail</h2>
+            </mat-card-title>
+        </mat-card-header>
+        <!--mat card content-->
+        <div class="display">
+            <mat-card-content>
+
+                <!--form tag with ngSubmit-->
+                <form [formGroup]="trailForm" (ngSubmit)="updateRecord()">
+                    <!--mat form field with input-->
+                    <div class="mat-form-field">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Trail Id :</mat-label>
+                            <input matInput placeholder="Trail Id" type="number" formControlName="id" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Trail Name :</mat-label>
+                            <input matInput placeholder="Trail Name" formControlName="name" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Description:</mat-label>
+                            <input matInput placeholder="Description" formControlName="description" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Duration:</mat-label>
+                            <input matInput placeholder="Duration" type="number" formControlName="duration" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Target Population:</mat-label>
+                            <input matInput placeholder="Target Population" 
+                                formControlName="targetPopulation" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Status:</mat-label>
+                            <input matInput placeholder="Status" formControlName="status" required>
+                        </mat-form-field>
+                        <!--mat button-->
+                        <div class="mat-button">
+                            <button mat-raised-button color="primary" type="submit" style="width: 20%;">Update Record</button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </mat-card-content>
+        </div>
+    </mat-card>
+
+    <!--simple footer with copyright tag-->
+    <div class="footer">
+        <mat-card-footer>
+            <p class="footer-content">&copy;2023 HealthCare. All rights reserved.</p>
+        </mat-card-footer>
+    </div>
